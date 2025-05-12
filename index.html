@@ -144,7 +144,6 @@
           style="vertical-align: middle; max-width: 550px; width: 280px;"
         />
 	  
-	 <!--  <a href="https://oobit.onelink.me/GWwv" target="_blank" class="sticky-button" id="getAppButton">Get Oobit App</a> -->
 	</div>
 	  
         
@@ -966,37 +965,4 @@ question.forEach(question => {
             parent.classList.toggle('open');
         }
     </script>
-	<!-- <script>
-  const button = document.getElementById("getAppButton");
-
-  const getStickyPoint = () => {
-    return window.innerWidth >= 640 ? 800 : 500;
-  };
-
-  window.addEventListener("scroll", () => {
-    const stickyPoint = getStickyPoint();
-    const scrollY = window.scrollY;
-    const scrollBottom = window.innerHeight + scrollY;
-    const documentHeight = document.documentElement.scrollHeight;
-    const isBottom = scrollBottom >= documentHeight - 300;
-
-    if (scrollY > stickyPoint && !isBottom) {
-      button.classList.add("docked");
-      button.classList.remove("hidden");
-    } else if (isBottom) {
-      button.classList.add("hidden");
-    } else {
-      button.classList.remove("docked", "hidden");
-    }
-  });
-
-  window.addEventListener("resize", () => {
-    const stickyPoint = getStickyPoint();
-    if (window.scrollY > stickyPoint) {
-      button.classList.add("docked");
-    } else {
-      button.classList.remove("docked");
-    }
-  });
-</script> -->
   </html>
