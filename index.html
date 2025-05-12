@@ -144,7 +144,7 @@
           style="vertical-align: middle; max-width: 550px; width: 280px;"
         />
 	  
-	  <a href="https://oobit.onelink.me/GWwv" target="_blank" class="sticky-button" id="getAppButton">Get Oobit App</a>
+	 <!--  <a href="https://oobit.onelink.me/GWwv" target="_blank" class="sticky-button" id="getAppButton">Get Oobit App</a> -->
 	</div>
 	  
         
@@ -524,58 +524,39 @@
         
           <!--<![endif]-->
 		  <div class="wrapper">
-  
-  <div class="container">
-    <div class="question p-mid">
-      How do I use Oobit?
+		  
+		  <div class="faq-section">
+        <div class="faq-item">
+            <div class="faq-question p-mid" onclick="toggleFAQ(this)">How do I use Oobit? <span class="chevron"></span></div>
+            <div class="faq-answer p-mid">
+			Using Oobit is easy:
+			</br></br>
+			<b>Download the App:</b> Install it from your app store.</br>
+			<b>Set Up Your Account:</b> Register and link your crypto wallet.</br>
+			<b>Start Paying:</b> Pay with Oobit anywhere Visa and Mastercard are accepted for seamless crypto-to-fiat transactions.
+			</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question p-mid" onclick="toggleFAQ(this)">How secure is Oobit? <span class="chevron"></span></div>
+            <div class="faq-answer p-mid">
+			When you pay with Oobit in-store, your privacy is fully protected. Our use of native NFC (Near field communication) technology ensures your data is encrypted and secure, keeping every transaction private and seamless.
+			</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question p-mid" onclick="toggleFAQ(this)">How do I set up Oobit? <span class="chevron"></span></div>
+            <div class="faq-answer p-mid">
+			Setting up Oobit is quick and simple:
+			</br></br>
+			<b>Download the App:</b> Get Oobit from your app store.</br>
+			<b>Create Your Account:</b> Sign up with your details and verify your identity.</br>
+			<b>Link Your Wallet:</b> Connect your crypto wallet to start using Oobit.
+			</div>
+		</div>
+        <div class="faq-item">
+            <div class="faq-question p-mid" onclick="toggleFAQ(this)">I don’t have a crypto wallet. Can I still use Oobit? <span class="chevron"></span></div>
+            <div class="faq-answer p-mid">Absolutely! Oobit is designed for everyone, whether you have a crypto wallet or not. You can buy crypto instantly using your bank card, store it securely in your Oobit account, and start making payments right away—just like a regular mobile payment app. No prior crypto experience needed!</div>
+        </div>
     </div>
-    <div class="answercont">
-      <div class="answer p-mid">
-		Using Oobit is easy:
-		</br></br>
-		<b>Download the App:</b> Install it from your app store.</br>
-		<b>Set Up Your Account:</b> Register and link your crypto wallet.</br>
-		<b>Start Paying:</b> Pay with Oobit anywhere Visa and Mastercard are accepted for seamless crypto-to-fiat transactions.
-	  </div>
-    </div>
-  </div>
-  
-    <div class="container">
-    <div class="question p-mid">
-      How secure is Oobit?
-    </div>
-    <div class="answercont">
-      <div class="answer p-mid">
-		When you pay with Oobit in-store, your privacy is fully protected. Our use of native NFC (Near field communication) technology ensures your data is encrypted and secure, keeping every transaction private and seamless.
-	  </div>
-    </div>
-  </div>
-  
-      <div class="container">
-    <div class="question p-mid">
-      How do I set up Oobit?
-    </div>
-    <div class="answercont">
-      <div class="answer p-mid">
-		Setting up Oobit is quick and simple:
-		</br></br>
-		<b>Download the App:</b> Get Oobit from your app store.</br>
-		<b>Create Your Account:</b> Sign up with your details and verify your identity.</br>
-		<b>Link Your Wallet:</b> Connect your crypto wallet to start using Oobit.
-      </div>
-    </div>
-  </div>
- 
-  <div class="container">
-    <div class="question p-mid">
-      I don’t have a crypto wallet. Can I still use Oobit?
-    </div>
-    <div class="answercont">
-      <div class="answer p-mid">
-		Absolutely! Oobit is designed for everyone, whether you have a crypto wallet or not. You can buy crypto instantly using your bank card, store it securely in your Oobit account, and start making payments right away—just like a regular mobile payment app. No prior crypto experience needed!
-      </div>
-    </div>
-  </div>
   
 </div>
           <!--[if !true]><!-->
@@ -846,6 +827,8 @@
   </div>
         </div>
       </div>
+	  <div id="floatingBg" class="floating-gradient-background desktop-hide tablet-hide"></div>
+	  <a id="floatingButton" class="floating-button desktop-hide tablet-hide">Get Oobit App</a>
       </body>
     <script>
         const track = document.getElementById('carouselTrack');
@@ -875,7 +858,7 @@
        function updatePosition() {
 		const shift = (carouselWidth - itemWidth) / 2;
 		if (window.innerWidth <= 600) {
-			track.style.transition = 'transform 0.3s ease';
+			track.style.transition = 'transform 1.5s ease';
 			track.style.transform = `translateX(-${(currentIndex * itemWidth)}px)`;
 		} else {
 			track.style.transition = 'transform 0.5s ease';
@@ -903,7 +886,7 @@
             autoScroll = setInterval(() => {
                 currentIndex++;
                 updatePosition();
-            }, 3000);
+            }, 7000);
         }
 
         function resetAutoScroll() {
@@ -950,6 +933,40 @@ question.forEach(question => {
 
 </script>
 <script>
+  const floatingButton = document.getElementById("floatingButton");
+  
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    if (documentHeight - scrollPosition < 300) {
+      floatingButton.classList.add("hidden");
+    } else {
+      floatingButton.classList.remove("hidden");
+    }
+  });
+</script>
+<script>
+  const floatingBg = document.getElementById("floatingBg");
+  
+  window.addEventListener("scroll", () => {
+    const scrollPosition = window.scrollY + window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    if (documentHeight - scrollPosition < 300) {
+      floatingBg.classList.add("hidden");
+    } else {
+      floatingBg.classList.remove("hidden");
+    }
+  });
+</script>
+<script>
+        function toggleFAQ(element) {
+            const parent = element.parentElement;
+            parent.classList.toggle('open');
+        }
+    </script>
+	<!-- <script>
   const button = document.getElementById("getAppButton");
 
   const getStickyPoint = () => {
@@ -981,5 +998,5 @@ question.forEach(question => {
       button.classList.remove("docked");
     }
   });
-</script>
+</script> -->
   </html>
